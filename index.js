@@ -7,6 +7,10 @@ app.get('/', (req, res) => {
   res.json({status: 'ok'});
 });
 
+app.get('/db_url', (req, res) => {
+  res.send(process.env.DATABASE_URL);
+});
+
 app.listen(port, () => {
   console.log(`Started on port ${port}`);
 });
